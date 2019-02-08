@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+body{width:1500px; height:100%;}
+</style>
+<script type="text/javascript" src="rectangle.js"></script>
+<script>
+window.onload = function(){
+	var r1 = new Rectangle(200, 200, 250, 250, "#00f");
+	var r2 = new Rectangle(250, 250, 300, 300, "#f00");
+	
+	r1.show();
+	r2.show();
+	
+	//타이머
+	setTimeout(function(){
+		console.log("hello~")
+	}, 1000/*miliseconds*/);
+	
+	var count = 0;
+// 	var intervalId1 = setInterval(function(){
+// 		console.log(++count);
+// 		if(count == 10)clearInterval(intervalId1);
+// 	}, 500);
+	
+	var rgb = function(){return Math.floor(Math.random()*255);};
+	var random = function(){var a = Math.floor((Math.random()*500)+1); console.log(a); return a;};
+	
+	var intervalId2 = setInterval(function(){
+		var r3 = new Rectangle(random(), random(), random(), random(), "RGB("+rgb()+","+rgb()+","+rgb()+")");
+		console.log(r3);
+		r3.show();
+		count++;
+		if(count == 10)clearInterval(intervalId2);
+	}, 500);
+	
+	//random
+	
+}
+</script>
+</head>
+<body>
+
+</body>
+</html>

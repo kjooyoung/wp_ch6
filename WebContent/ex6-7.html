@@ -4,24 +4,95 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
-var colors = ["blue", "black", "red", "green"];
-var size = colors.length;
+// 배열 정의, 배열 값 저장
+var a1 = new Array(10);
+a1[0] = 0;
+a1[9] = 9;
+console.log("a1 length: "+a1.length);
 
-for(var i = 0; i < size; i++){
-	document.write(
-			"<div style='"	+
-			
-			"width:100px;"	+
-			
-			"height:100px;"	+
-			
-			"background-color:"  + colors[i] + ";"    +
-			
-			"'>" +
-			
-			"</div>" );
-	
+// 동적으로 크기가 변하는 배열
+// new Array(size)
+// size를 주는 것이 크게 의미는 없지만
+// 기본 사이즈를 주는게 성능 향상에 좋다.
+a1[11] = 11;
+console.log("a1 length: "+a1.length);
+
+var a2 = [];
+console.log("a2 length: "+a2.length);
+a2[0] = 10;
+a2[1] = "Hello World";
+a2[2] = false;
+a2[3] = {
+	name: "둘리"
+};
+console.log(a2);
+
+
+//초기화
+var a3 = [1, "ABC", true];
+console.log("a3 length: "+a3.length);
+console.log(a3);
+
+var a4 = new Array(1, "ABC", true);
+console.log(a4);
+
+// 순회
+for(var i=0; i<a4.length; i++){
+	console.log(a4[i]);
 }
+
+// 배열 확장
+Array.prototype.remove = function(index){
+	this.splice(index, 1);
+}
+var array1 = [1, 2, 3, 4 , 5, 6];
+array1.remove(2);
+console.log(array1);
+
+/*				배열 함수				*/
+// concat
+var colors = ["black", "white", "yellow"];
+var fruits = ["apple", "banana", "mango"];
+var test = fruits.concat(colors);
+console.log(test);
+
+// join
+var str = fruits.join(",");
+console.log(str);
+
+// pop(stack)
+var color = colors.pop();
+console.log(color);
+console.log(colors);
+
+// push
+colors.push("red");
+console.log(colors);
+
+// splice
+console.log(fruits);
+var fruits2 = fruits.splice(1, 2);
+console.log(fruits);
+console.log(fruits2);
+
+// reverse
+fruits.reverse();
+console.log(fruits);
+
+// shift
+var numbers = [5000, 3000, 2000, 4000, 1000];
+numbers.shift();
+console.log(numbers);
+
+// slice
+var numbers2 = numbers.slice(0, 2);
+console.log(numbers2);
+
+// sort
+numbers.sort();
+console.log(numbers);
+
+
 </script>
 </head>
 <body>
