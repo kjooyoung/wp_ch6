@@ -4,8 +4,18 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script>
-var changeText = function(el){
-	el.innerHTML = "Ooops!";
+var onH1Clicked = function(){
+	console.log("click"+this);
+	this.innerHTML = "<strong>clicked</strong>";
+	this.style.color = "#f00";
+}
+window.onload = function(){
+	var h1 = document.getElementById("my-h1");
+// 	console.log(h1+":"+typeof h1);
+// 	h1.onclick = function(){
+// 		console.log("click");
+// 	}
+	h1.onclick = onH1Clicked;
 }
 </script>
 </head>
@@ -13,7 +23,17 @@ var changeText = function(el){
 <!--
 <h1 onclick="this.innerHTML='Ooops!';">Click on this text!</h1>
 -->
-<h1 onclick="changeText(this)">Click on this text!</h1>
-
+<h1 
+	onclick="console.log('click');"
+	onmousedown="console.log('mousedown');"
+	onmouseup="console.log('mouseup');"
+	onmouseover="console.log('mouseover');"
+	onmouseout="console.log('mouseout');"
+	ondblclick="console.log('dblclick');"
+	>
+	Click on this text!</h1>
+<h1 id="my-h1">
+	Click on this text!
+</h1>
 </body>
 </html>
